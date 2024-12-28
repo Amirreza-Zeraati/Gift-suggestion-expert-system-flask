@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main">
+    <div class="my-container">
+        <h2>{{ question }}</h2>
+    <br>
+        <form method="POST" action="{{ url_for('question', question_id=question_id + 1) }}">
+            <div class="options">
+                {% for value, label in options.items() %}
+                    <button type="submit" name="answer" value="{{ value }}" class="option-button">
+                        {{ label }}
+                    </button>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+<div class="my-back">
+        <a href="{{ url_for('index') }}" class="restart-button">↻</a>
+    </div>
+</div>
+{% endblock %}

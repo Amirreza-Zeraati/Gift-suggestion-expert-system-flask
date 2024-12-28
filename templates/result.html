@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="my-container">
+    <h2>Your Gift Suggestions</h2>
+    <ul class="element">
+        {% for suggestion in suggestions %}
+            <li>{{ suggestion }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}" class="restart-button">Restart</a>
+</div>
+{% endblock %}
